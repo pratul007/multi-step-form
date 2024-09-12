@@ -7,7 +7,7 @@ import ProgressBar from '../../component/ProgressBar';
 import Swal from 'sweetalert2';
 
 export default function Step3() {
-  const { register, handleSubmit, setValue, formState: { errors } } = useForm();
+  const { register, handleSubmit, setValue } = useForm();
   const router = useRouter();
 
   useEffect(() => {
