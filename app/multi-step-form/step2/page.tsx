@@ -5,20 +5,19 @@ import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/navigation';
 import ProgressBar from '../../component/ProgressBar';
 
-// Define an interface for the form data
 interface FormData {
   email: string;
   password: string;
 }
 
 export default function Step2() {
-  const { register, handleSubmit, setValue, formState: { errors } } = useForm<FormData>(); // Use FormData as the form type
+  const { register, handleSubmit, setValue, formState: { errors } } = useForm<FormData>();
   const router = useRouter();
 
   useEffect(() => {
     const savedData = localStorage.getItem('formData');
     if (savedData) {
-      const parsedData: FormData = JSON.parse(savedData); // Ensure parsedData is of type FormData
+      const parsedData: FormData = JSON.parse(savedData); 
       setValue('email', parsedData.email);
       setValue('password', parsedData.password);
     }
